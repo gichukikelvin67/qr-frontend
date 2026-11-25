@@ -1,0 +1,514 @@
+.dashboard {
+  display: flex;
+  min-height: 100vh;
+  background: var(--page);
+  color: var(--ink);
+}
+
+.sidebar {
+  width: 255px;
+  min-height: 100vh;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  padding: 26px 18px;
+  background: #174b38;
+  color: #ffffff;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 38px;
+}
+
+.brandLogo {
+  width: 42px;
+  height: 42px;
+  object-fit: contain;
+}
+
+.brandName {
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.workspaceLabel,
+.navHeading {
+  color: #a9c3b5;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.1px;
+}
+
+.workspaceLabel {
+  margin-bottom: 25px;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+}
+
+.navGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.navHeading {
+  margin-bottom: 8px;
+}
+
+.navLink,
+.supportLink {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 11px 12px;
+  border-radius: 9px;
+  color: #e0ebe5;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background 160ms ease, color 160ms ease;
+}
+
+.navLink svg,
+.supportLink svg {
+  flex-shrink: 0;
+}
+
+.navLink:hover,
+.supportLink:hover {
+  background: #245c45;
+  color: #ffffff;
+}
+
+.navLinkActive {
+  background: #ff604c;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.navLinkActive:hover {
+  background: #ed503e;
+}
+
+.navIndicator {
+  display: none;
+}
+
+.supportLink {
+  margin-top: auto;
+  margin-bottom: 20px;
+  border: 1px solid #47715f;
+}
+
+.sidebarFooter {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding-top: 20px;
+  border-top: 1px solid #47715f;
+}
+
+.footerBrand {
+  color: #ffffff;
+  font-family: var(--font-heading);
+  font-weight: 800;
+}
+
+.footerCaption {
+  color: #a9c3b5;
+  font-size: 11px;
+}
+
+.mainContent {
+  min-width: 0;
+  flex: 1;
+}
+
+.topbar {
+  min-height: 88px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 18px 34px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.breadcrumb {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.topbar h1 {
+  margin-top: 4px;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+}
+
+.topbarActions {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.connectionLabel {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.refreshButton,
+.errorPanel button {
+  padding: 10px 17px;
+  border: 0;
+  border-radius: var(--radius-sm);
+  background: var(--primary);
+  color: white;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.refreshButton:hover,
+.errorPanel button:hover {
+  background: var(--primary-hover);
+}
+
+.pageContent {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 32px 34px;
+}
+
+.welcomeSection {
+  margin-bottom: 28px;
+}
+
+.welcomeSection h2 {
+  margin-top: 9px;
+  font-family: var(--font-heading);
+  font-size: 25px;
+  letter-spacing: -0.8px;
+}
+
+.welcomeSection p {
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.metricsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 17px;
+  margin-bottom: 22px;
+}
+
+.metricCard {
+  min-width: 0;
+  padding: 22px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+
+.metricLabel,
+.metricDescription {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.metricValue {
+  display: block;
+  margin: 15px 0 8px;
+  font-family: var(--font-heading);
+  font-size: clamp(18px, 2vw, 25px);
+  font-weight: 800;
+  overflow-wrap: anywhere;
+}
+
+.panel {
+  min-width: 0;
+  margin-bottom: 20px;
+  padding: 23px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-soft);
+}
+
+.panelHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-bottom: 23px;
+}
+
+.panelHeader h2 {
+  margin-top: 7px;
+  font-family: var(--font-heading);
+  font-size: 17px;
+}
+
+.periodLabel {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+.summaryItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.summaryItem span,
+.balanceBlock span {
+  color: var(--muted);
+  font-size: 12px;
+}
+
+.summaryItem strong {
+  font-family: var(--font-heading);
+  font-size: 17px;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 0.8fr;
+  gap: 20px;
+}
+
+.paymentList {
+  display: flex;
+  flex-direction: column;
+}
+
+.paymentRow {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.paymentRow:last-child {
+  border-bottom: 0;
+}
+
+.paymentRow div {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.paymentRow div span {
+  color: var(--muted);
+  font-size: 11px;
+}
+
+.paymentRow strong {
+  font-size: 13px;
+}
+
+.balanceBlock strong {
+  display: block;
+  margin: 12px 0;
+  font-family: var(--font-heading);
+  font-size: 27px;
+}
+
+.balanceBlock p {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.8;
+}
+
+.unavailableGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 15px;
+}
+
+.unavailableItem {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 17px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-sm);
+}
+
+.unavailableItem strong {
+  font-size: 13px;
+}
+
+.unavailableItem span,
+.emptyState {
+  color: var(--muted);
+  font-size: 12px;
+  line-height: 1.7;
+}
+
+.emptyPanel,
+.errorPanel {
+  padding: 20px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+}
+
+.emptyPanel p,
+.errorPanel p {
+  margin-top: 7px;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.errorPanel {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 20px;
+  border-color: #f0cccc;
+}
+
+.skeletonLabel,
+.skeletonValue,
+.skeletonDescription {
+  border-radius: 5px;
+  background: #eceef1;
+  animation: dashboardPulse 1.4s ease-in-out infinite;
+}
+
+.skeletonLabel {
+  width: 45%;
+  height: 12px;
+}
+
+.skeletonValue {
+  width: 70%;
+  height: 27px;
+  margin: 17px 0 12px;
+}
+
+.skeletonDescription {
+  width: 85%;
+  height: 10px;
+}
+
+@keyframes dashboardPulse {
+  50% {
+    opacity: 0.45;
+  }
+}
+
+.pageFooter {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 20px 0;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+@media (max-width: 1100px) {
+  .metricsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .summaryGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .dashboard {
+    display: block;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-height: auto;
+    padding: 16px;
+  }
+
+  .navigation {
+    flex-direction: row;
+    overflow-x: auto;
+    gap: 18px;
+  }
+
+  .navGroup {
+    min-width: max-content;
+  }
+
+  .sidebarFooter {
+    display: none;
+  }
+
+  .topbar {
+    padding: 17px 20px;
+  }
+
+  .pageContent {
+    padding: 24px 18px;
+  }
+
+  .contentGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .unavailableGrid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .metricsGrid,
+  .summaryGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .topbarActions {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .pageFooter {
+    flex-direction: column;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dashboard *,
+  .dashboard *::before,
+  .dashboard *::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}
